@@ -1,0 +1,132 @@
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(transparent)), url("../assets/backgroundImg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url("../assets/backgroundImg.jpg");
+  background-size: cover;
+}
+
+.App h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.weather {
+  min-height: 50vh;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.weather .weather-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.title {
+  min-height: 20vh;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.condition-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.condition-container img {
+  min-height: 2.5rem;
+}
+
+.search {
+  width: 50%;
+  height: 7vh;
+}
+
+.search form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 5rem;
+}
+
+.search form textarea {
+  width: 80%;
+  resize: none;
+  overflow: hidden;
+}
+
+.search form button {
+  background-color: #090949;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0.7rem;
+}
+
+@media screen and (max-width: 700px) {
+  .title {
+    padding: 2rem;
+  }
+  .title h1 {
+    font-size: 2rem;
+  }
+  .weather-data {
+    text-align: center;
+  }
+  .weather-data .condition-container {
+    width: 100%;
+  }
+  .search {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=App.css.map */
