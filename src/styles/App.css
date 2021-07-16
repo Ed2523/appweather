@@ -69,7 +69,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 30%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -82,34 +81,28 @@
 .search {
   width: 50%;
   height: 7vh;
-}
-
-.search form {
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 5rem;
 }
 
-.search form textarea {
-  width: 80%;
-  resize: none;
-  overflow: hidden;
+.search input {
+  height: 100%;
+  width: 70%;
+  font-size: 2rem;
 }
 
-.search form button {
+.search button {
   background-color: #090949;
   border: none;
   cursor: pointer;
   color: white;
-  padding: 0.7rem;
+  height: 100%;
+  padding: 0 1rem;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -124,9 +117,24 @@
   }
   .weather-data .condition-container {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .weather-data .condition-container img {
+    height: 5rem;
   }
   .search {
     width: 80%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .search button {
+    margin-left: 0.1rem;
   }
 }
 /*# sourceMappingURL=App.css.map */

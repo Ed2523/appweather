@@ -5,8 +5,9 @@ import Title from './components/Title'
 import Weather from './components/Weather'
 
 function App() {
+
   const [input, setInput] = useState('GUADALAJARA')
-  const [api, setApi] = useState(`https://api.weatherapi.com/v1/current.json?key=28b4760a15104031844184955211407&q=${input}`)
+  const [api, setApi] = useState(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${input}`)
   const [weather, setWeather] = useState({
     region: '',
     city: '',
@@ -24,7 +25,7 @@ function App() {
   const searchWeatherOnLoad = () => {
 
 
-    setApi(`https://api.weatherapi.com/v1/current.json?key=28b4760a15104031844184955211407&q=${input}`);
+    setApi(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${input}`);
     axios.get(api)
       .then((dataObject) => {
 
@@ -41,29 +42,30 @@ function App() {
 
 
   }
-  const searchWeather = (event) => {
+  const searchWeather = (e) => {
 
-    if ((event.key === 'Enter') || (event.className === 'form')) {
+    setApi(`https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${input}`);
+    axios.get(api)
+      .then((dataObject) => {
 
-      setApi(`https://api.weatherapi.com/v1/current.json?key=28b4760a15104031844184955211407&q=${input}`);
-      axios.get(api)
-        .then((dataObject) => {
-
-          setWeather({
-            region: dataObject.data.location.region,
-            city: dataObject.data.location.name,
-            condition: dataObject.data.current.condition.text,
-            conditionIcon: dataObject.data.current.condition.icon,
-            temperature: dataObject.data.current.temp_c,
-          });
+        setWeather({
+          region: dataObject.data.location.region,
+          city: dataObject.data.location.name,
+          condition: dataObject.data.current.condition.text,
+          conditionIcon: dataObject.data.current.condition.icon,
+          temperature: dataObject.data.current.temp_c,
+        });
 
 
-        }).catch((error) => { console.log(error) });
-
-    }
+      }).catch((error) => { console.log(error) });
 
 
   }
+  //   if (e.key === 'Enter' || e.type === 'search') {
+
+
+
+  // }
 
   const searchLocation = (event) => {
     setInput(event.target.value);
@@ -75,14 +77,14 @@ function App() {
     <div className="App">
       <div className="search">
 
-        <form onSubmit={searchWeather} onKeyDown={searchWeather} className='form'>
+        {/* <form onSubmit={searchWeather} onKeyDown={searchWeather} className='form'>
           <textarea onChange={searchLocation} cols="20" rows="1" spellCheck="false"></textarea>
           <div><button className='button'>Search</button></div>
-        </form>
+        </form> */}
 
-        {/* <input type="search" onChange={searchLocation} />
-        <button className='button' onClick={searchWeather} onKeyDown={test}>Search</button>
-       */}
+        <input type="search" onChange={searchLocation} onKeyDown={searchWeather} />
+        <button className='button' onClick={searchWeather} >Search</button>
+
 
 
       </div>
