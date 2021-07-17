@@ -5,7 +5,7 @@ const Title = () => {
     return (
 
         <div className="title">
-            <h1>The Wheather brought by Ed Inc corporations</h1>
+            <h1>The Wheather brought by Ed corporations </h1>
         </div>
 
     );
